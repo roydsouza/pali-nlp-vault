@@ -17,7 +17,8 @@ updated: 2026-10-29
 - [x] Dashboard banner and Directory card (Serenity, 2026-10-29)
 - [x] Clearance ratified by Roy: Nemesis caretaker of this vault, and full read/write in Tipitaka (2026-10-29)
 - [ ] Vault registered and the clearance in force (ships in release Step B)
-- [ ] Pipeline's own copy of DPD updated to the 2026-10-26 release, and a monthly update check in place (Galena)
+- [x] Pipeline's own copy of DPD at the 2026-10-26 release, with 89,763 headwords and 852,425 split forms, at `~/.local/share/pali-nlp/dpd/current` (Galena, 2026-10-29)
+- [x] Monthly update check: `~/.local/share/pali-nlp/bin/dpd-update`, run by launchd on the 28th at 03:15. A new release is adopted only if it doesn't shrink; tested on the up-to-date path, while the adopt path waits for the next real release (Galena, 2026-10-29)
 - [ ] Design drafted (Nemesis), then reviewed (Lilith, Minerva)
 - [ ] Repository README and developer docs (Serenity)
 - [ ] Athena's survey of existing Pāli tools folded into the design

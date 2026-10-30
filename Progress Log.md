@@ -11,6 +11,7 @@ updated: 2026-10-29
 *Newest first.*
 
 ### 2026-10-29
+- DPD 2026-10-26 installed for the pipeline: 89,763 headwords and 852,425 split forms (Simsapa's June copy had about 78,800 and 731,000). A monthly updater is in place.
 - Roy ratified the clearance: Nemesis is caretaker of this vault and has full read/write access to Tipitaka. It ships in release Step B, with the Diet vault's changes.
 - Serenity delivered the dashboard banner and the Directory card.
 - Nemesis wrote the Pali NLP proposal at Roy's request.
