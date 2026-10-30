@@ -10,6 +10,9 @@ updated: 2026-10-29
 
 There is no new application. You use three things you already have.
 
+> [!warning] Not built yet (as of 2026-10-29)
+> This page describes the **finished** system. Today the study-page generator doesn't exist, so **"study MN 118" gets you an answer in the chat, not a page.** Pages arrive with **Phase 2** in [[Status]], after the design (Phase 0) and the sandhi pilot (Phase 1). Until then, ask the Sibyl outright to *"write it as a page in the Tipitaka vault"*, and treat that page as hand-made, not pipeline output.
+
 ## 📖 1 · Reading, in Obsidian (the Tipitaka vault)
 Say **"study MN 10"**, and you get a page where each Pāli line shows:
 - the **sandhi split**: the merged words pulled apart (*tathāgatopi* → *tathāgato + api*);
