@@ -1,0 +1,158 @@
+/* ============================================================
+   mobile-vault.css — Megha vault, phone ergonomics
+   Galena, 2026-08-23. Roy-directed.
+
+   Two jobs:
+     1. Get hero banners out of the way on phones.
+     2. Make the Quick Links grid a thumb-sized tap target.
+
+   Desktop is untouched by every rule below.
+   ============================================================ */
+
+
+/* ---- 1 · Suppress hero banners on mobile -------------------
+   A 200-300px graphic eats 40-50% of a 390x844 viewport, so the
+   first thing a phone shows is a wall you must swipe past before
+   any tappable thing appears.
+
+   Two selectors deliberately, belt and braces:
+     .is-mobile        Obsidian's own platform class
+     @media max-width  catches narrow windows if that class moves
+   Either alone would probably do. Both cost nothing.
+
+   Targets the hero-* naming convention, so this applies to every
+   hero in the vault, not just the Dashboard's.
+------------------------------------------------------------ */
+
+.is-mobile .internal-embed[src^="hero-"],
+.is-mobile .internal-embed[alt^="hero-"] {
+  display: none !important;
+}
+
+@media (max-width: 600px) {
+  .internal-embed[src^="hero-"],
+  .internal-embed[alt^="hero-"] {
+    display: none !important;
+  }
+}
+
+
+/* ---- 2 · Quick Links -------------------------------------
+   Authored as a native Obsidian callout, not a <div> or a table.
+   Obsidian does NOT render wikilinks inside raw HTML blocks
+   (markdown="1" is Markdown-Extra and unsupported), so a <div>
+   wrapper would show the links as literal text. Inside a callout
+   they resolve normally, and if this snippet is ever disabled the
+   callout still renders as plain working links.
+
+   TWO DIFFERENT LAYOUTS ON PURPOSE — this is the fix for
+   2026-08-23, when the phone rendering came out clunky:
+
+     WIDE  -> one balanced row of equal tiles.
+     PHONE -> a single column of full-width rows, the native iOS
+              list shape. Left-aligned, icon first, ~56px tall.
+
+   The previous version used two columns everywhere. With three
+   tiles that leaves an orphan on row two, and the rule that made
+   the orphan span the full width is exactly the "one long centred
+   one" Roy reported. A single column cannot produce an orphan, so
+   the whole failure mode goes away rather than being patched.
+
+   Mobile tiles are also SHORTER than desktop now, not taller. The
+   old rule grew them to 72px on the small screen, which is what
+   read as clunky: on a 390px viewport a tall box with a wrapped
+   label is worse than a compact row, not better. 56px still clears
+   Apple's 44pt touch-target minimum with room.
+------------------------------------------------------------ */
+
+/* Custom callout type: no icon, no title bar, just the links.
+
+   2026-09-09 — INVERTED. The default used to be a 5-column tile grid
+   (built for the phone) and .is-mobile overrode it to a single column.
+   On a laptop that rendered as 5 narrow centred tiles then 3, which
+   Roy reported as unusable. The single-column left-aligned row is now
+   the DEFAULT for every device; .is-mobile below only adjusts the
+   proportions (taller rows to clear Apple's 44pt touch target).
+   Order is unchanged and comes from INDEX.md, not from CSS.          */
+.callout[data-callout="quicklinks"] {
+  --callout-color: 0, 0, 0;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0.6em 0 1em 0;
+  mix-blend-mode: unset;
+}
+
+.callout[data-callout="quicklinks"] .callout-title {
+  display: none;
+}
+
+.callout[data-callout="quicklinks"] .callout-content {
+  display: grid;
+  grid-template-columns: 1fr;   /* one link per line — desktop default since 2026-09-09 */
+  gap: 2px;                     /* tightened 6px→2px, 2026-09-09 */
+  padding: 0;
+}
+
+/* Callout content wraps each line in a <p>; flatten so the grid
+   sees the links themselves as its items. */
+.callout[data-callout="quicklinks"] .callout-content p {
+  display: contents;
+  margin: 0;
+}
+
+.callout[data-callout="quicklinks"] .callout-content a.internal-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  /* left aligned */
+  min-height: 30px;             /* tightened 40px→30px, 2026-09-09 */
+  padding: 3px 12px;            /* vertical padding 8px→3px */
+  text-align: left;
+  line-height: 1.2;
+  font-size: 1em;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 12px;
+  background: var(--background-secondary);
+}
+
+.callout[data-callout="quicklinks"] .callout-content a.internal-link:hover,
+.callout[data-callout="quicklinks"] .callout-content a.internal-link:active {
+  background: var(--background-modifier-hover);
+  text-decoration: none;
+}
+
+
+/* ---- 2a · Phone layout: single column, iOS list shape --------
+   Two separate blocks on purpose — a @media rule cannot live
+   inside a selector list, and writing it that way silently kills
+   the whole declaration.
+------------------------------------------------------------ */
+
+.is-mobile .callout[data-callout="quicklinks"] .callout-content {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.is-mobile .callout[data-callout="quicklinks"] .callout-content a.internal-link {
+  min-height: 56px;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 8px 14px;
+  font-size: 1.02em;
+}
+
+@media (max-width: 600px) {
+  .callout[data-callout="quicklinks"] .callout-content {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .callout[data-callout="quicklinks"] .callout-content a.internal-link {
+    min-height: 56px;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 8px 14px;
+    font-size: 1.02em;
+  }
+}
