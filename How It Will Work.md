@@ -10,8 +10,8 @@ updated: 2026-10-29
 
 There is no new application. You use three things you already have.
 
-> [!warning] Not built yet (as of 2026-10-29)
-> This page describes the **finished** system. Today the study-page generator doesn't exist, so **"study MN 118" gets you an answer in the chat, not a page.** Pages arrive with **Phase 2** in [[Status]], after the design (Phase 0) and the sandhi pilot (Phase 1). Until then, ask the Sibyl outright to *"write it as a page in the Tipitaka vault"*, and treat that page as hand-made, not pipeline output.
+> [!success] Working now (v0, 2026-10-29)
+> **Say "study MN 118" to Nemesis and she makes the page**: `Tipitaka/study/MN 118 Study.md`. MN 10, MN 118 and SN 56.11 are already made. v0 limits: when a word has several possible readings, it picks the dictionary form most common in the early texts rather than reading the context, and it uses DPD's first split. The sandhi pilot (Phase 1) improves both. Concordance links and an Obsidian plugin come later.
 
 ## 📖 1 · Reading, in Obsidian (the Tipitaka vault)
 Say **"study MN 10"**, and you get a page where each Pāli line shows:

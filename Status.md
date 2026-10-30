@@ -29,11 +29,13 @@ updated: 2026-10-29
 - [ ] Splitter scored against the gold passages; results in the Progress Log
 - [ ] Lilith's attack pass on the parser
 
-## Phase 2 · Study pages and tutor — *not started*
+## Phase 2 · Study pages and tutor — *v0 working (pulled forward at Roy's request)*
+- [x] **v0 study pages:** `pali-study <sutta>` writes `Tipitaka/study/<ID> Study.md`, with DPD grammar and meanings, DPD splits, Sujato's English, and known words skipped. MN 10, MN 118 and SN 56.11 generated. 5 tests; branch `study-v0` in `~/pali-nlp`, not yet pushed (Galena, 2026-10-29)
+- [ ] Nemesis's standing rule: "study <sutta>" → run `pali-study`, link the page, tutor from it
+- [ ] Nemesis reviews and owns the v0 code
 - [ ] `pali.db` built from the pinned sources
-- [ ] "Study MN 10" page generated in the Tipitaka vault
 - [ ] The `pali` CLI the Sibyls call for tutoring, answering with citations
-- [ ] Known-words list, so annotations thin out
+- [x] Known-words list (`Tipitaka/study/Known Words.md`), so annotations thin out
 - [ ] Roy reads the three pilot suttas and judges whether it helps
 
 ## Phase 3 · Across the canon — *later*
