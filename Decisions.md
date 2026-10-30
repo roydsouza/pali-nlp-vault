@@ -17,4 +17,5 @@ updated: 2026-10-29
 4. **Sujato's material is cleared**, including in the public repository. Roy has Bhante Sujato's explicit permission. SuttaCentral's general request about AI datasets does not block this project.
 5. **The `pali-nlp` repository stays public.** It is not private material.
 6. **A Pali NLP vault** (this one) is the home for understanding and tracking the project. The reading happens in the Tipitaka vault, and the code lives in the repository.
-7. **Coven Futures is parked** in the Conclave vault's [Coven Future Candidates](obsidian://open?vault=conclave&file=docs%2Ffutures%2FCoven%20Future%20Candidates) register.
+7. **Nemesis is this vault's caretaker and has full read/write access to the Tipitaka vault** (ratified; in force when release Step B is cut).
+8. **Coven Futures is parked** in the Conclave vault's [Coven Future Candidates](obsidian://open?vault=conclave&file=docs%2Ffutures%2FCoven%20Future%20Candidates) register.

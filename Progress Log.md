@@ -11,6 +11,8 @@ updated: 2026-10-29
 *Newest first.*
 
 ### 2026-10-29
+- Roy ratified the clearance: Nemesis is caretaker of this vault and has full read/write access to Tipitaka. It ships in release Step B, with the Diet vault's changes.
+- Serenity delivered the dashboard banner and the Directory card.
 - Nemesis wrote the Pali NLP proposal at Roy's request.
 - **Reviewed:**
   - Galena, Lilith, Minerva and Serenity read it.
